@@ -8,7 +8,9 @@ import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -28,7 +30,7 @@ public class Playground extends JPanel implements ActionListener {
 	ArrayList<PlayCard> holdingCards = new ArrayList<PlayCard>();
 	
 	String imgNamePath;
-	String cardImgPath;
+	URL cardImgPath;
 	
 	Board table = new Board();
 	String handName;
@@ -359,7 +361,7 @@ public class Playground extends JPanel implements ActionListener {
 	
 	//TODO: set image path to be relative
 	public void loadImage() {
-		ImageIcon boardImg = new ImageIcon("image/board2.png");
+		ImageIcon boardImg = new ImageIcon(getClass().getResource("/board2.png"));
 		board = boardImg.getImage();
 	}
 
@@ -372,7 +374,7 @@ public class Playground extends JPanel implements ActionListener {
 		for (int i = 0; i < 5; i++) {
 			currentCards = table.player.getPlayerCurrentCards().get(i);
 			imgNamePath = currentCards.getFace() + currentCards.getSuit();
-			cardImgPath = "image/cards/"+ imgNamePath +".png";
+			cardImgPath = getClass().getResource("/cards/"+ imgNamePath +".png");
 			ImageIcon cardsImg = new ImageIcon(cardImgPath);
 			cardDraw.add(cardsImg.getImage());
 		}

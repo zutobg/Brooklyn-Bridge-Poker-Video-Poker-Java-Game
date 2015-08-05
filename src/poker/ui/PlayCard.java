@@ -1,11 +1,13 @@
 package poker.ui;
 
+import java.net.URL;
+
 public class PlayCard {
 	
 	private int rank;   // the card's rank (if the face is "2" the rank is 1, "A" - rank 13)
 	private String face;    //the card's face (example: "J")
 	private char suit;  // the card's suit("D" for diamond, etc...)
-	private String imgPath; // the path to the card face in /images
+	private URL imgPath; // the path to the card face in /images
     //private final String imgPathFlipped = "/brooklynbridgepoker/resources/images/cards/b2fv.png"; // path to the image of a card back in /images
     private String image;   // current image used
     
@@ -49,6 +51,6 @@ public class PlayCard {
     
 	//TODO: update path to be realtive
     public void setImage(String image){ //sets the image path (could be improved)
-        this.imgPath = "/brooklynbridgepoker/resources/images/cards/"+image+".png";
+        this.imgPath = getClass().getResource("/cards/"+image+".png");
     }
 }
