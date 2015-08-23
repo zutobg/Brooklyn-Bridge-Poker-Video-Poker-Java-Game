@@ -2,7 +2,7 @@ package poker.ui;
 
 public class Pot {
     
-    private int currentPotTotal;    // total sum in the pot
+    public int currentPotTotal;    // total sum in the pot
     
     public Pot(){   // default constructor
         

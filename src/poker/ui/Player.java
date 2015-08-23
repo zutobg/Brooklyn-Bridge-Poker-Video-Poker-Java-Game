@@ -8,11 +8,11 @@ public class Player {
 
     private int cash;   // holds the player cash
     
-    private int bet;    // holds the player bet
+    public int bet;    // holds the player bet
     
-    private int combRank;
+    public int combRank;
     
-    private ArrayList<PlayCard> currentCards;   // holds the player hand
+    public ArrayList<PlayCard> currentCards;   // holds the player hand
     
     public Player(){   // default constructor
 		
